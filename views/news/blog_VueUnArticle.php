@@ -27,7 +27,7 @@
            $nbresultats ++;
         ?>
             <p><strong><?= $comment['nom'] ?></strong> le <?= $comment['date_commentaire_fr'] ?></p>
-            <p><?= nl2br($comment['texte_com']) ?></p>
+            <p><?= nl2br($comment['commentaire']) ?></p>
 			<p><?= $nbresultats ?></p>
         <?php
         }
