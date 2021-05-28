@@ -32,7 +32,7 @@ function DbConnect()
 {
     try
     {
-        $bdd = new PDO('mysql:host=localhost;dbname=projdevweb', 'root', 'root');
+        $bdd = new PDO('mysql:host=localhost;dbname=projdevwebtest', 'root', 'root');
         return $bdd;
     }
     catch(Exception $e)
