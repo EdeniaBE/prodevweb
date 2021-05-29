@@ -8,8 +8,7 @@ $cartModel = new Cart();
 <?php
 if ($cartModel->cartSessionItemCount > 0) {
     ?>
-<table width="100%" id="cart-table" cellpadding="10" cellspacing="1"
-	border="0">
+<table width="100%" id="cart-table" cellpadding="10" cellspacing="1" border="0">
 	<tbody>
 		<tr>
 			<th>Nom</th>
@@ -26,14 +25,27 @@ if ($cartModel->cartSessionItemCount > 0) {
 			<td><?php echo $item["name"]; ?></td>
 			<td><input type="number" name="quantity" class="quantity"
 				value="<?php echo $item['quantity']; ?>"
-				data-code='<?php echo $item["code"]; ?>' size=2
+				data-code='<?php echo $item["article_id"]; ?>' size=2
 				onChange="updatePrice(this)" /> <input type="hidden" class='total'
 				name="total" value="<?php echo $item["price"]; ?>" /></td>
 			<td class="prc text-right" id="price" <?php echo $i;?>><?php echo $item["price"]; ?></td>
-        <?php $i++; ?>
-        <td class="text-right"><a
-				onClick="cartAction('remove','<?php echo $item["code"]; ?>')"
-				class="btnRemoveAction"><img src="./view/images/icon-delete.png"
+			<?php
+                if($article['dispo'] = 1){ 
+                    $i = 0;
+                    while($i <= 10 and $i <= $article['stock']){
+                        ?>
+                        <option value="<?=$i?>"><?=$i?></option>
+                        <?php
+                        $i++;
+                    } 
+                } else{
+                    ?> Non disponible <?php
+                }
+                ?>
+
+        <td class="text-right">
+			<a  onClick="cartAction('remove','<?php echo $item["article_id"]; ?>')"
+				class="btnRemoveAction"><img src="./views/images/icon-delete.png"
 					alt="Remove Item" /></a></td>
 		</tr>
     <?php

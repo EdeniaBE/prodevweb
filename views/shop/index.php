@@ -25,6 +25,7 @@ if (isset($_POST["checkout-btn"])) {
 
 			<div class="order-message order-success">
 			Votre numéro de facture est  <?php echo $order_number;?>.
+			<a href="bill.php"> Voir details facture <a>
 		<span class="btn-message-close"
 					onclick="this.parentElement.style.display='none';" title="Close">&times;</span>
 
@@ -33,15 +34,9 @@ if (isset($_POST["checkout-btn"])) {
 
 
 			<div class="section product-gallery">
-        			<?php require_once './views/shop/product-gallery-IT.php'; ?>
-			<div class="section product-gallery">
-        			<?php require_once './views/shop/product-gallery-Book.php'; ?>		
-      		 </div>
-			<div class="section product-gallery">
-        			<?php require_once './views/shop/product-gallery-Hifi.php'; ?>		
-      		 </div>
-			<div class="billing-details">
-		            <?php require_once './views/shop/billing-details.php'; ?>
+        			<?php require_once './views/shop/product-gallery.php'; ?>
+			<div class="checkout-billing-details">
+		            <?php require_once './views/shop/checkout-billing-details.php'; ?>
 			</div>
 
 			<div class="cart-error-message" id="cart-error-message">Votre panier doit contenir au moins un achat</div>

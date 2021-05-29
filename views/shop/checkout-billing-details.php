@@ -29,12 +29,6 @@
 		<input class="input-box-330" type="text" name="city">
 	</div>
 </div>
-<!-- <div class="row">
-	<div class="form-label">State</div>
-	<div class="inline-block">
-		<input class="input-box-330" type="text" name="state">
-	</div>
-</div> -->
 <div class="row">
 	<div class="form-label">
 		Adresse mail<span class="required error"></span>
